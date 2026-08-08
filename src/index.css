@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #faf8f4; color: #0b1e3d; font-family: Poppins, sans-serif; }
+* { box-sizing: border-box; }
+.fade-up { animation: fade-up .75s ease-out both; }
+@keyframes fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes ken-burns { from { transform: scale(1); } to { transform: scale(1.08); } }
+.animate-ken-burns { animation: ken-burns 18s ease-out alternate infinite; }
+@keyframes scope-loop { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.scope-track { animation: scope-loop 40s linear infinite; }
+.scope-marquee:hover .scope-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } .scope-track { animation: none; } }
